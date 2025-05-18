@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación ➤ ProMed</title>
+    <link rel="stylesheet" href="styleubicacion.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22007BFF%22>𝙋</text></svg>">
+</head>
+<header class="header">
+  <nav class="navbar">
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="ubicacion.html">Ubicación</a>
+  </nav>
+  <img src="promed-logo.png" alt="Logo ProMed" class="logo-central">
+</header>
+<body>
+        <div class="page-transition">
+  <img src="promed-logo.png" alt="Logo ProMed">
+</div>
+    <main>
+
+    </main>
+    <script>
+        const videos = [
+            "video1.mp4",
+            "video2.mp4",
+            "video3.mp4",
+            "video4.mp4"
+        ];
+
+        const randomIndex = Math.floor(Math.random() * videos.length);
+        const selectedVideo = videos[randomIndex];
+
+        const videoElement = document.getElementById("background-video");
+        videoElement.src = selectedVideo;
+        videoElement.load();
+        videoElement.play();
+
+        const originalTitle = "Inicio ➤ ProMed";
+        const afkTitle = "➤ ProMed";
+
+        let afkTimer;
+        let afkDelay = 10000; // 10 segundos (podés subirlo)
+
+        function setAFK() {
+            document.title = afkTitle;
+        }
+
+        function resetAFK() {
+            document.title = originalTitle;
+            clearTimeout(afkTimer);
+            afkTimer = setTimeout(setAFK, afkDelay);
+        }
+
+        ["mousemove", "keydown", "scroll", "touchstart"].forEach(event => {
+            document.addEventListener(event, resetAFK);
+        });
+
+        afkTimer = setTimeout(setAFK, afkDelay);
+    </script>
+    <script>
+  const links = document.querySelectorAll("a[href]");
+  const transition = document.querySelector(".page-transition");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("mailto")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        transition.classList.add("active");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600);
+      });
+    }
+  });
+
+  window.addEventListener("pageshow", () => {
+    transition.classList.remove("active");
+  });
+</script>
+
+</body>
+</html>
