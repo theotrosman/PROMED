@@ -6,15 +6,14 @@ Bienvenido al sitio web oficial de **ProMed Internacional**, una empresa dedicad
 
 ## 🚀 Características destacadas
 
-- 🎞️ **Video de fondo aleatorio** que se carga automáticamente al iniciar.
-- 🌫️ **Overlay oscuro** para resaltar el contenido principal.
-- 🧠 **Script AFK** que detecta inactividad y cambia el título para llamar la atención del usuario.
-- 🖋️ **Diseño limpio y elegante**, con tipografía moderna (`Poppins` o `Segoe UI`).
-- 🧩 Estructura pensada para futuras páginas como:
-  - Nosotros
-  - Contacto
-  - Ubicación
-  - Productos
+- 🎞️ **Video de fondo aleatorio** que se elige dinámicamente al cargar la página (`video1.mp4` a `video4.mp4`).
+- 🌫️ **Overlay oscura** para mejorar contraste y legibilidad.
+- 🧠 **Script AFK inteligente**: cambia el título de la pestaña si el usuario se aleja.
+- 📍 **Google Maps embebido** mostrando la ubicación exacta de la empresa.
+- 📱 **Botón flotante de WhatsApp** que permite contacto inmediato, visible en escritorio y dispositivos móviles.
+- 💡 **Diseño responsivo** pensado para usuarios con baja experiencia tecnológica: limpio, directo, y adaptado a celulares.
+- 🔁 **Transición visual entre páginas** al estilo branding (logo + fondo blanco).
+- 🧩 Navegación fluida con secciones: Inicio, Nosotros, Contacto, Ubicación.
 
 ---
 
@@ -23,3 +22,4 @@ Bienvenido al sitio web oficial de **ProMed Internacional**, una empresa dedicad
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Google Maps](https://img.shields.io/badge/Google%20Maps-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white)
