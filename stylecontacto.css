@@ -94,3 +94,123 @@
     transform: scale(1.1);
   }
 }
+.footer-promed {
+  background-color: #0b2c5b;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-promed a {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-promed a:hover {
+  color: #d0e2ff;
+}
+
+.footer-promed .footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+main {
+  padding-top: 200px;
+  background: linear-gradient(#ffffff, #f7f9fc);
+  z-index: 1;
+  position: relative;
+}
+
+.tarjetas-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* MÁS separación */
+  flex-wrap: wrap;
+  padding: 80px 20px;
+}
+
+.tarjeta {
+  width: 360px; 
+  height: 250px;
+  perspective: 1000px;
+  position: relative;
+margin-top: -10%;
+}
+
+.tarjeta .cara {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 1.5s ease;
+  border: 2px solid #104388;
+box-shadow: 0 12px 24px rgba(16, 67, 136, 0.3);
+}
+
+.tarjeta .frente {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.tarjeta .atras {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.tarjeta:hover .frente {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.tarjeta:hover .atras {
+  transform: rotateY(360deg);
+  z-index: 2;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .tarjetas-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .tarjeta {
+    width: 90%;
+    height: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .logo-central {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+}

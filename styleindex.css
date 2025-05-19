@@ -122,3 +122,60 @@
     transform: scale(1.1);
   }
 }
+.footer-promed {
+  background-color: #0b2c5b;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-promed a {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-promed a:hover {
+  color: #d0e2ff;
+}
+
+.footer-promed .footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .logo-central {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  video#background-video {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.5); 
+  }
+}

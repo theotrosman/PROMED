@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros ➤ ProMed</title>
     <link rel="stylesheet" href="stylenosotros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22007BFF%22>𝙋</text></svg>">
 </head>
 <header class="header">
@@ -21,10 +22,97 @@
         <div class="page-transition">
   <img src="promed-logo.png" alt="Logo ProMed">
 </div>
+<div class="scroll-down">
+  <i class="fas fa-chevron-down bounce-strong"></i>
+</div>
+<main>
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-building icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Pro Med Internacional S.A.</h2>
+      <p>Fundada el 20 de febrero de 1992, nuestra empresa fue constituida como sociedad anónima.</p>
+      <hr class="divider">
+    </div>
+  </section>
 
-    <main>
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-syringe icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Evolución del negocio</h2>
+      <p>Inicialmente enfocada en productos descartables para uso hospitalario, odontológico y de laboratorio. Hoy nuestra principal actividad es la venta mayorista de especialidades medicinales y reactivos de diagnóstico.</p>
+      <hr class="divider">
+    </div>
+  </section>
 
-    </main>
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-briefcase-medical icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Clientes y trayectoria</h2>
+      <p>Comercializamos con hospitales, obras sociales y organismos del Estado. Participamos en licitaciones nacionales e internacionales.</p>
+      <hr class="divider">
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-handshake icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Hitos comerciales</h2>
+      <p>Adjudicatarios de órdenes millonarias del PNUD y Ministerio de Salud, representando a BioMerieux Argentina.</p>
+      <hr class="divider">
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-user-tie icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Equipo humano</h2>
+      <p>Contamos con 15 empleados distribuidos entre dirección, administración, ventas, choferes y servicios.</p>
+      <hr class="divider">
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-check-circle icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Normas de calidad</h2>
+      <p>Trabajamos para certificar ISO 9001 optimizando procesos administrativos y operativos.</p>
+      <hr class="divider">
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="icon-wrapper">
+      <i class="fas fa-vial icon"></i>
+    </div>
+    <div class="text-wrapper">
+      <h2>Futuro estratégico</h2>
+      <p>Desde 2017 incorporamos un laboratorio de especialidades medicinales, mejorando costos y posicionamiento.</p>
+      <hr class="divider">
+    </div>
+  </section>
+</main>
+<footer class="footer-promed">
+  <div class="footer-content">
+    <p><strong>PRO MED INTERNACIONAL S.A. | DROGUERÍA</strong></p>
+    <p>Av. Vélez Sarsfield 132 | C1282ACD | Buenos Aires | Argentina</p>
+    <p>Tel/Fax: +54 11 4306-0600 / 4306-2298 / 4304-7387</p>
+    <p><a href="mailto:presidencia@promedint.com.ar">presidencia@promedint.com.ar</a></p>
+  </div>
+</footer>
+
+
     <script>
         const videos = [
             "video1.mp4",
@@ -85,6 +173,65 @@
     transition.classList.remove("active");
   });
 </script>
+<script>
+  const sections = document.querySelectorAll('.fade-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+<script>
+  document.querySelector(".scroll-down i").addEventListener("click", () => {
+    window.scrollTo({
+      top: document.querySelector("main").offsetTop - 40,
+      behavior: "smooth"
+    });
+  });
+</script>
 
 </body>
+<!-- 
+.==============================================.
+|                                              |
+|                           .'\                |
+|                          //  ;               |
+|                         /'   |               |
+|        .----..._    _../ |   \               |
+|         \'---._ `.-'      `  .'              |
+|          `.    '              `.             |
+|            :            _,.    '.            |
+|            |     ,_    (() '    |            |
+|            ;   .'(().  '      _/__..-        |
+|            \ _ '       __  _.-'--._          |
+|            ,'.'...____'::-'  \     `'        |
+|           / |   /         .---.              |
+|     .-.  '  '  / ,---.   (     )             |
+|    / /       ,' (     )---`-`-`-.._          |
+|   : '       /  '-`-`-`..........--'\         |
+|   ' :      /  /                     '.       |
+|   :  \    |  .'         o             \      |
+|    \  '  .' /          o       .       '     |
+|     \  `.|  :      ,    : _o--'.\      |     |
+|      `. /  '       ))    (   )  \>     |     |
+|        ;   |      ((      \ /    \___  |     |
+|        ;   |      _))      `'.-'. ,-'` '     |
+|        |    `.   ((`            |/    /      |
+|        \     ).  .))            '    .       |
+|     ----`-'-'  `''.::.________:::TT'' ---    |
+|                                              |
+|                                              |
+|==============================================|
+|                  THEO TROSMAN                |
+|         https://github.com/theotrosman       |
+'=============================================='
+-->
+
 </html>
