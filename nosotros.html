@@ -6,20 +6,20 @@
     <title>Nosotros ➤ ProMed</title>
     <link rel="stylesheet" href="stylenosotros.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22007BFF%22>𝙋</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22007BFF%22>𝙋</text></svg>">
 </head>
+<body>
 <header class="header">
+  <img src="promed-logo.png" alt="Logo ProMed" class="logo-central">
   <nav class="navbar">
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="contacto.html">Contacto</a>
     <a href="ubicacion.html">Ubicación</a>
   </nav>
-  <img src="promed-logo.png" alt="Logo ProMed" class="logo-central">
 </header>
 
-<body>
-        <div class="page-transition">
+<div class="page-transition">
   <img src="promed-logo.png" alt="Logo ProMed">
 </div>
 <div class="scroll-down">
@@ -112,7 +112,6 @@
   </div>
 </footer>
 
-
     <script>
         const videos = [
             "video1.mp4",
@@ -199,16 +198,34 @@
 <script>
   let lastScroll = 0;
   const header = document.querySelector('.header');
+  const threshold = 50; // Umbral de desplazamiento para ocultar/mostrar
+  let isHeaderVisible = true;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (window.innerWidth <= 768) {
-      if (currentScroll > lastScroll) {
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        header.style.transform = 'translateY(0)';
-      }
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+      // Si estamos en la parte superior, siempre mostrar el header
+      header.classList.remove('hidden');
+      isHeaderVisible = true;
+      return;
     }
+
+    if (Math.abs(currentScroll - lastScroll) < threshold) {
+      // No hacer nada si el cambio es menor que el umbral
+      return;
+    }
+
+    if (currentScroll > lastScroll && isHeaderVisible) {
+      // Scrolling hacia abajo
+      header.classList.add('hidden');
+      isHeaderVisible = false;
+    } else if (currentScroll < lastScroll && !isHeaderVisible) {
+      // Scrolling hacia arriba
+      header.classList.remove('hidden');
+      isHeaderVisible = true;
+    }
+
     lastScroll = currentScroll;
   });
 </script>
