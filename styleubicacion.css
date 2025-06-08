@@ -184,3 +184,133 @@
   0%, 100% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, -6px); }
 }
+
+/* Estilos para el popup de Google Maps */
+.maps-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
+  padding: 20px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.maps-popup-content {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.maps-popup h3 {
+  color: #104388;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.maps-popup p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.maps-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.maps-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.maps-button:first-child {
+  background-color: #104388;
+  color: white;
+}
+
+.maps-button:first-child:hover {
+  background-color: #0b2c5b;
+}
+
+.maps-button:last-child {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.maps-button:last-child:hover {
+  background-color: #e0e0e0;
+}
+
+.maps-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: none;
+  color: #666;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .maps-popup {
+    padding: 20px 15px;
+  }
+  
+  .maps-popup h3 {
+    font-size: 1.2rem;
+  }
+  
+  .maps-popup p {
+    font-size: 0.9rem;
+  }
+  
+  .maps-button {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

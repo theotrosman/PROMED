@@ -26,6 +26,23 @@
     <video id="background-video" autoplay muted loop></video>
     <div class="overlay"></div>
 
+    <!-- Popup de Bienvenida Móvil -->
+    <div id="welcome-popup" class="welcome-popup">
+        <div class="welcome-content">
+            <h2>¡Bienvenido a ProMed! 👋</h2>
+            <div class="welcome-info">
+                <p>👉 En la parte superior encontrarás:</p>
+                <ul>
+                    <li>🏠 <strong>Inicio:</strong> Vuelve a esta página principal</li>
+                    <li>👥 <strong>Nosotros:</strong> Conoce más sobre ProMed</li>
+                    <li>📞 <strong>Contacto:</strong> Comunícate con nosotros</li>
+                    <li>📍 <strong>Ubicación:</strong> Encuentra nuestras instalaciones</li>
+                </ul>
+                <p>Desliza hacia abajo para explorar más contenido.</p>
+            </div>
+            <button id="close-popup" class="close-popup">Entendido</button>
+        </div>
+    </div>
 
     <script>
         const videos = [
@@ -102,6 +119,25 @@
       }
     }
     lastScroll = currentScroll;
+  });
+</script>
+
+<script>
+  // Script para el popup de bienvenida
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('welcome-popup');
+    const closeButton = document.getElementById('close-popup');
+    
+    // Verificar si es la primera visita
+    if (!localStorage.getItem('welcomeShown') && window.innerWidth <= 768) {
+      popup.style.display = 'flex';
+    }
+
+    closeButton.addEventListener('click', function() {
+      popup.style.display = 'none';
+      // Guardar que ya se mostró el popup
+      localStorage.setItem('welcomeShown', 'true');
+    });
   });
 </script>
 </body>

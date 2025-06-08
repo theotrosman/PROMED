@@ -25,15 +25,28 @@
   <iframe 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1160.6246697859692!2d-58.390651731154236!3d-34.63595207370644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb3ebe0572b3%3A0x1412b8d023e90079!2sDroguer%C3%ADa%20Pro%20Med%20Internacional!5e0!3m2!1ses!2sar!4v1747616028527!5m2!1ses!2sar" 
     width="100%" 
-    height="450" 
+    height="600" 
     style="border:0; border-radius: 20px;" 
     allowfullscreen="" 
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 
-  <div class="popup-mapa" id="popupMapa">
-    📍 ¿Querés abrir la ubicación en Google Maps?
+  <div class="maps-popup" id="mapsPopup">
+    <div class="maps-popup-content">
+      <h3>📍 ¿Cómo llegar?</h3>
+      <p>Av. Vélez Sarsfield 132, C1282 Cdad. Autónoma de Buenos Aires</p>
+      <div class="maps-buttons">
+        <button id="openInMaps" class="maps-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="maps-icon">
+          Abrir en Google Maps
+        </button>
+        <button id="copyAddress" class="maps-button">
+          📋 Copiar dirección
+        </button>
+      </div>
+      <button id="closePopup" class="close-button">×</button>
+    </div>
   </div>
 </section>
 
@@ -108,13 +121,40 @@
   });
 </script>
 <script>
-  const popup = document.getElementById("popupMapa");
+  // Mostrar el popup solo en dispositivos móviles
+  document.addEventListener('DOMContentLoaded', function() {
+    const mapsPopup = document.getElementById('mapsPopup');
+    const openInMaps = document.getElementById('openInMaps');
+    const copyAddress = document.getElementById('copyAddress');
+    const closePopup = document.getElementById('closePopup');
+    const address = "Av. Vélez Sarsfield 132, C1282 Cdad. Autónoma de Buenos Aires";
+    const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Droguería+Pro+Med+Internacional+Av.+Vélez+Sarsfield+132+Buenos+Aires";
 
-  popup.addEventListener("click", () => {
-    const confirmar = confirm("¿Querés abrir la ubicación en Google Maps?");
-    if (confirmar) {
-      window.open("https://maps.google.com/?q=-34.6358381577815,-58.390044816523925", "_blank");
+    // Mostrar el popup solo en móviles y si no se ha cerrado antes
+    if (window.innerWidth <= 768 && !localStorage.getItem('mapsPopupClosed')) {
+      setTimeout(() => {
+        mapsPopup.style.display = 'flex';
+      }, 1500);
     }
+
+    openInMaps.addEventListener('click', () => {
+      window.open(mapsUrl, '_blank');
+    });
+
+    copyAddress.addEventListener('click', () => {
+      navigator.clipboard.writeText(address).then(() => {
+        const originalText = copyAddress.innerHTML;
+        copyAddress.innerHTML = '✅ ¡Copiado!';
+        setTimeout(() => {
+          copyAddress.innerHTML = originalText;
+        }, 2000);
+      });
+    });
+
+    closePopup.addEventListener('click', () => {
+      mapsPopup.style.display = 'none';
+      localStorage.setItem('mapsPopupClosed', 'true');
+    });
   });
 </script>
 <script>
