@@ -1,6 +1,6 @@
 # 🌐 ProMed Internacional
 
-Bienvenido al sitio web oficial de **ProMed Internacional**, una empresa dedicada a la **venta y distribución de medicamentos** a farmacias en todo el país. Este sitio fue desarrollado con HTML, CSS y JavaScript puro, ofreciendo una experiencia visual moderna, profesional e interactiva.
+Bienvenido al sitio web oficial de **ProMed Internacional**, una empresa dedicada a la **venta y distribución de medicamentos** a farmacias en todo el país. Este sitio fue desarrollado con HTML, CSS y JavaScript puro, ofreciendo una experiencia visual moderna, profesional e interactiva. 
 
 ---
 
