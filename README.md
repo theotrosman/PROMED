@@ -5,7 +5,7 @@ Bienvenido al sitio web oficial de **ProMed Internacional**, una empresa dedicad
 ---
 
 ## 🚀 Características destacadas
-
+ 
 - 🎞️ **Video de fondo aleatorio** que se elige dinámicamente al cargar la página (`video1.mp4` a `video4.mp4`).
 - 🌫️ **Overlay oscura** para mejorar contraste y legibilidad.
 - 🧠 **Script AFK inteligente**: cambia el título de la pestaña si el usuario se aleja.
